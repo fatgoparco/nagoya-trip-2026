@@ -12,14 +12,19 @@
 .day-content-grid{display:grid;gap:20px}.timeline li{border-radius:12px;transition:background .18s ease}.timeline li.is-focused{background:#FFF8EA}.event-title{cursor:pointer}.event-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.event-action{display:inline-flex;align-items:center;gap:5px;padding:6px 10px;border:2px solid var(--ink);border-radius:11px;font-size:.82rem;font-weight:800;background:#EAF6FA;box-shadow:2px 2px 0 var(--ink);line-height:1.35}.event-action.transit{background:#DDF2DC}.event-action:hover,.event-action:focus-visible{background:var(--yellow)}.route-hint{display:block;font-size:.78rem;color:#61594e;margin-top:6px}.preview-pane{background:#FFF7EA;border:3px solid var(--ink);border-radius:22px;padding:12px;align-self:start;overflow:hidden}.preview-inner{position:sticky;top:134px}.preview-top{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:1px 4px 9px}.preview-top strong{font-size:.91rem}.preview-media{aspect-ratio:4/3;border:2px solid var(--ink);background:#EAF6FA;border-radius:15px;overflow:hidden;position:relative;display:grid;place-items:center}.preview-media img{display:block;width:100%;height:100%;object-fit:cover}.preview-art{width:100%;height:100%;display:grid;place-items:center;background:#F3EEDC}.preview-art svg{width:100%;height:100%}.preview-caption{font-weight:900;padding:10px 5px 0;font-size:1.02rem}.preview-sub{padding:0 5px 3px;font-size:.78rem;color:#655e59}.preview-loading{font-size:.8rem;color:#655e59}.preview-trigger{background:transparent;border:0;padding:0;text-align:left;color:inherit;font-weight:900;cursor:pointer}.preview-trigger:hover{text-decoration:underline;text-decoration-style:dotted}.mobile-preview{display:none}.preview-pane a{font-size:.8rem;text-decoration:underline}.timeline li:focus-within{background:#FFF8EA}
 @media(min-width:800px){.day-content-grid{grid-template-columns:minmax(0,1.32fr) minmax(260px,.9fr);align-items:start}.preview-pane{position:sticky;top:130px}}
 @media(max-width:799px){.preview-pane{display:none}.mobile-preview{display:block;margin:11px 0 4px;border:2px solid var(--ink);border-radius:15px;overflow:hidden;background:#FFF7EA}.mobile-preview img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}.mobile-preview p{padding:8px 10px;margin:0;font-size:.82rem}.mobile-preview .preview-art{height:145px}.event-title:after{content:'  ▾';font-size:.75rem;color:#827367}}
+/* 名古屋天氣小手帳 */
+.weather-shell{padding:20px;background:#F0F7F5}.weather-head{display:flex;justify-content:space-between;align-items:start;gap:12px;flex-wrap:wrap}.weather-head h2{margin-top:10px}.weather-refresh{background:#fff;border:2px solid var(--ink);border-radius:14px;padding:10px 14px;min-height:44px;box-shadow:2px 2px 0 var(--ink)}.weather-refresh:disabled{cursor:wait;opacity:.65}.weather-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}.weather-card{min-width:0;padding:14px 12px;background:#fff;border:2px solid var(--ink);border-radius:20px;box-shadow:3px 3px 0 var(--ink)}.weather-card:first-child{grid-column:1/-1;background:#FFF2CF}.weather-card h3{font-size:1rem}.weather-date{font-size:.82rem;color:#605a56}.weather-symbol{display:block;font-size:2.7rem;line-height:1.5}.weather-temp{font-size:2.5rem;line-height:1.3;font-weight:bold}.weather-card dl{margin:12px 0 0}.weather-card dl div{display:flex;justify-content:space-between;gap:5px;flex-wrap:wrap;padding:4px 0;border-top:1px dashed #c9c4bc;font-size:.85rem}.weather-card dd{margin:0;font-weight:bold}.weather-status{font-size:.88rem;margin:15px 0 0;overflow-wrap:anywhere}.weather-source{font-size:.8rem;margin:10px 0 0}.weather-source a{text-decoration:underline;text-underline-offset:3px}.weather-empty{grid-column:1/-1;padding:22px;border:2px dashed var(--ink);border-radius:18px;background:#fff}.weather-shell[data-state="stale"] .weather-status,.weather-shell[data-state="error"] .weather-status{background:#FFF0DD;border-radius:10px;padding:10px}.weather-note{font-size:.8rem;color:#605a56;margin:8px 0 0}@media(min-width:540px){.weather-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.weather-card:first-child{grid-column:auto}.weather-shell{padding:26px}.weather-card{padding:16px}}@media(min-width:900px){.weather-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:359px){.weather-grid{grid-template-columns:1fr}.weather-temp{font-size:2rem}}
+
 </style>
 </head>
 <body>
-<header class="topbar"><div class="container top-inner"><a class="logo" href="#home">🍁 名古屋秋日繪本</a><nav class="menu" aria-label="網站選單"><a href="#home">首頁</a><a href="#flights">航班</a><a href="#days">每日行程</a><a href="#stay">住宿</a><a href="#todo">待辦</a><a href="#budget">預算</a></nav></div></header>
+<header class="topbar"><div class="container top-inner"><a class="logo" href="#home">🍁 名古屋秋日繪本</a><nav class="menu" aria-label="網站選單"><a href="#home">首頁</a><a href="#weather">天氣</a><a href="#flights">航班</a><a href="#days">每日行程</a><a href="#stay">住宿</a><a href="#todo">待辦</a><a href="#budget">預算</a></nav></div></header>
 <main>
 <section id="home" class="hero"><div class="container hero-grid"><div><span class="tag">10/11/2026 — 17/11/2026</span><h1>名古屋<br>秋日小旅行 🍂</h1><p>八日七夜・紅葉、古城、美食、吉卜力。<br>Let's Goooooo!!!!</p><div id="count-label" class="muted" aria-live="polite">距離出發仲有</div><div class="countdown" aria-label="出發倒數"><div class="count-cell"><strong id="dd">--</strong><small>日</small></div><div class="count-cell"><strong id="hh">--</strong><small>小時</small></div><div class="count-cell"><strong id="mm">--</strong><small>分鐘</small></div><div class="count-cell"><strong id="ss">--</strong><small>秒</small></div></div><p class="footnote" style="margin-top:13px">倒數以日本時間 11 月 10 日下午 2:10 抵達名古屋為準。</p></div>
 <div class="hero-art"><svg viewBox="0 0 560 420" role="img" aria-label="名古屋城、紅葉樹、電車與晴空的日系繪本風插圖" xmlns="http://www.w3.org/2000/svg"><rect width="560" height="420" fill="#FDF4E7"/><circle cx="445" cy="81" r="43" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/><g class="cloud-move" fill="#fff" stroke="#3E3A39" stroke-width="3"><path d="M52 84q0-26 30-25 10-27 36-16 14 6 18 22 34-6 38 17 3 22-32 22H81Q52 103 52 84Z"/></g><path d="M0 319Q120 260 270 309T560 292V420H0Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/><g class="wobble" stroke="#3E3A39" stroke-width="4" stroke-linejoin="round"><rect x="161" y="225" width="214" height="104" fill="#FFFCF6"/><path d="M148 225h241l-24-39H174Z" fill="#A8D3E6"/><rect x="193" y="160" width="146" height="37" fill="#FFFCF6"/><path d="M178 160h175l-25-32H202Z" fill="#A8D3E6"/><rect x="231" y="111" width="73" height="23" fill="#FFFCF6"/><path d="M217 111h101l-18-27h-65Z" fill="#A8D3E6"/><path d="M267 84V60"/><rect x="250" y="233" width="37" height="96" fill="#F2A497"/><path d="M189 254h31m79 0h30m-140 24h31m79 0h30" fill="none"/></g><g class="leaf-float"><path d="M70 195C5 135 18 64 88 88c40-69 91-6 63 34 72 10 37 86-17 76-11 66-69 52-64-3Z" fill="#F2A497" stroke="#3E3A39" stroke-width="4"/><path d="M98 170v149" stroke="#3E3A39" stroke-width="10" stroke-linecap="round"/><path d="M96 195l-33-35m34 22 38-46" stroke="#3E3A39" stroke-width="3"/></g><g stroke="#3E3A39" stroke-width="3"><path d="M372 343h177"/><rect x="389" y="306" width="142" height="38" rx="15" fill="#F6D27A"/><rect x="408" y="315" width="31" height="14" rx="4" fill="#fff"/><rect x="450" y="315" width="31" height="14" rx="4" fill="#fff"/><circle cx="417" cy="347" r="10" fill="#3E3A39"/><circle cx="504" cy="347" r="10" fill="#3E3A39"/></g><g fill="#F2A497" stroke="#3E3A39" stroke-width="2"><path d="m464 185 22-9-12 23Z"/><path d="m45 292 22-8-11 22Z"/></g><text x="430" y="387" font-size="17" font-weight="bold" fill="#3E3A39">NAGOYA</text></svg></div></div></section>
 <section><div class="container"><div class="mini-grid"><div class="mini outline"><span>出發</span><strong>10/11（二）</strong></div><div class="mini outline"><span>返程</span><strong>17/11（二）</strong></div><div class="mini outline"><span>旅程</span><strong>8 日 7 夜</strong></div><div class="mini outline"><span>名古屋 11 月歷史平均氣溫</span><strong>日間 17°C／夜晚 8°C</strong></div></div></div><p class="container footnote" style="margin-top:10px">氣溫參考：Weather.com 名古屋 11 月歷史月平均（最高約 17°C、最低約 8°C），並非 10–17/11 每日預報。<a href="https://weather.com/ja-JP/weather/monthly/l/096fc9d3995db272f638412ce2bc0de4104bffbf25224e20178a67973dd35845" target="_blank" rel="noopener noreferrer">查看資料來源 ↗</a></p></section>
+<section id="weather" aria-labelledby="weather-title"><div class="container"><div class="weather-shell outline" id="weather-shell" data-state="loading"><div class="weather-head"><div><span class="tag">NAGOYA · 天氣小手帳</span><h2 id="weather-title">帶把傘，定追住陽光？</h2><p class="weather-note" id="weather-local-date">今日＋未來三日・日本時間 JST（UTC+9）</p></div><button type="button" id="weather-refresh" class="weather-refresh">↻ 更新天氣</button></div><div id="weather-grid" class="weather-grid" aria-busy="true"><p class="weather-empty">☁️ 正在翻開名古屋嘅天氣手帳…</p></div><p id="weather-status" class="weather-status" role="status" aria-live="polite">正在讀取天氣資料…</p><p class="weather-note">顯示瀏覽當日嘅預報，唔係固定旅行日期。降雨機率為全日最高值；濕度為全日平均。當前數值屬天氣模型估算。</p><p class="weather-source">天氣資料：<a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo ↗</a>（CC BY 4.0）・<a href="https://weather.com/ja-JP/weather/tenday/l/096fc9d3995db272f638412ce2bc0de4104bffbf25224e20178a67973dd35845" target="_blank" rel="noopener noreferrer">Weather.com 名古屋 ↗</a>（外部參考）</p><noscript><p class="notice">請開啟 JavaScript 載入天氣，或使用以上外部天氣連結。</p></noscript></div></div></section>
+
 <section id="flights"><div class="container"><h2>✈️ 航班小卡</h2><p class="intro">按你提供嘅國泰航班截圖整理，全部時間都係當地時間。</p><div class="flights">
 <div class="flight outline"><div class="head"><span>11 月 7 日・星期六</span><span>CX 104</span></div><div class="route"><div><div class="airport">MEL</div><div>3:30 pm</div></div><div class="arrow">✈</div><div style="text-align:right"><div class="airport">HKG</div><div>9:45 pm</div></div></div><div class="muted">墨爾本 → 香港｜赴日之前停留香港</div></div>
 <div class="flight outline"><div class="head"><span>11 月 10 日・星期二</span><span>CX 536</span></div><div class="route"><div><div class="airport">HKG</div><div>9:35 am</div></div><div class="arrow">✈</div><div style="text-align:right"><div class="airport">NGO</div><div>2:10 pm</div></div></div><div class="muted">香港 → 名古屋｜正式開始八日旅程</div></div>
@@ -132,5 +137,69 @@ function renderDay(i){active=i;tabs.innerHTML=days.map((d,j)=>`<button class="da
 renderDay(0);tabs.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();let next=e.key==='Home'?0:e.key==='End'?7:e.key==='ArrowRight'?(active+1)%8:(active+7)%8;renderDay(next);document.getElementById('tab-'+next).focus();});
 const todoItems=['確認吉卜力公園門票種類（Standard／Premium／其他）','儲存已預訂酒店嘅訂房確認電郵及入住資料','查清楚香嵐溪巴士時間與回程尾班車','預訂 11 月 15 日晚餐','檢查護照、入境規定同旅遊保險','申請／設定日本上網 eSIM 或漫遊','準備日圓或可海外使用嘅付款卡','下載離線地圖、保留航班訂位資料','預留行李空間買手信'];let checks=[];try{checks=JSON.parse(localStorage.getItem('nagoya-checks-v1')||'[]')}catch(e){}if(!Array.isArray(checks))checks=[];const checklist=document.getElementById('checklist');function renderChecks(){checklist.innerHTML=todoItems.map((s,i)=>`<label class="checkrow"><input type="checkbox" data-i="${i}" ${checks.includes(i)?'checked':''}><span>${s}</span></label>`).join('')}renderChecks();checklist.addEventListener('change',e=>{if(e.target.matches('input[type="checkbox"]')){let i=Number(e.target.dataset.i);checks=e.target.checked?[...new Set([...checks,i])]:checks.filter(x=>x!==i);try{localStorage.setItem('nagoya-checks-v1',JSON.stringify(checks))}catch(err){}}});document.getElementById('reset-checks').addEventListener('click',()=>{checks=[];try{localStorage.removeItem('nagoya-checks-v1')}catch(e){}renderChecks()});
 function updateCountdown(){const arrival=Date.parse('2026-11-10T14:10:00+09:00');let distance=arrival-Date.now();if(distance<=0){document.getElementById('count-label').textContent='名古屋之旅已經開始／抵達日期已過';distance=0}else{document.getElementById('count-label').textContent='距離抵達名古屋仲有'}const n=Math.floor(distance/1000);['dd','hh','mm','ss'].forEach((id,i)=>{const values=[Math.floor(n/86400),Math.floor(n%86400/3600),Math.floor(n%3600/60),n%60];document.getElementById(id).textContent=String(values[i]).padStart(2,'0')})}updateCountdown();setInterval(updateCountdown,1000);
+</script>
+<script>
+// 天氣獨立運作，避免影響原有行程功能。
+(() => {
+'use strict';
+const endpoint='https://api.open-meteo.com/v1/forecast?latitude=35.1815&longitude=136.9066&current=temperature_2m,relative_humidity_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,relative_humidity_2m_mean&timezone=Asia%2FTokyo&forecast_days=4&temperature_unit=celsius';
+const key='nagoya-weather-v1', interval=30*60*1000;
+const shell=document.getElementById('weather-shell'),grid=document.getElementById('weather-grid'),status=document.getElementById('weather-status'),button=document.getElementById('weather-refresh');
+let saved=null,busy=false,lastAttempt=0;
+const japanDay=(now=new Date())=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
+const stamp=t=>new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tokyo',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(t));
+const num=(n,unit)=>typeof n==='number'&&Number.isFinite(n)?Math.round(n)+unit:'—';
+function condition(code,night=false){
+ if(code===0)return [night?'🌙':'☀️',night?'晴朗夜空':'天晴'];
+ if([1,2].includes(code))return [night?'☁️':'🌤️','晴間多雲'];
+ if(code===3)return ['☁️','多雲'];
+ if([45,48].includes(code))return ['🌫️','有霧'];
+ if([51,53,55,56,57].includes(code))return ['🌦️','毛毛雨'];
+ if([61,63,65,66,67,80,81,82].includes(code))return ['🌧️','有雨'];
+ if([71,73,75,77,85,86].includes(code))return ['🌨️','有雪'];
+ if([95,96,99].includes(code))return ['⛈️','雷雨'];
+ return ['🌡️','天氣資料未齊'];
+}
+function valid(d){return d&&d.timezone==='Asia/Tokyo'&&d.current&&/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(d.current.time)&&d.daily&&Array.isArray(d.daily.time)&&d.daily.time.length>=4&&['weather_code','temperature_2m_max','temperature_2m_min','precipitation_probability_max','relative_humidity_2m_mean'].every(k=>Array.isArray(d.daily[k])&&d.daily[k].length===d.daily.time.length)&&d.daily.time.every(t=>/^\d{4}-\d{2}-\d{2}$/.test(t));}
+function usable(s){return s&&Number.isFinite(s.at)&&s.at<=Date.now()+60000&&Date.now()-s.at<24*60*60*1000&&valid(s.data)&&s.data.daily.time[0]===japanDay();}
+function localLabel(){document.getElementById('weather-local-date').textContent='日本當地 '+stamp(Date.now())+' JST · 今日＋未來三日';}
+function render(s){
+ const d=s.data,c=d.current;
+ grid.innerHTML=d.daily.time.slice(0,4).map((day,i)=>{
+ const currentFresh=i===0&&Date.now()-s.at<interval&&c.time.slice(0,10)===japanDay();
+ const [icon,label]=condition(currentFresh?c.weather_code:d.daily.weather_code[i],currentFresh&&c.is_day===0);
+ const date=new Date(day+'T12:00:00+09:00');
+ const dateLabel=day.slice(8,10)+'/'+day.slice(5,7)+'/'+day.slice(0,4);
+ const weekday=new Intl.DateTimeFormat('zh-Hant',{timeZone:'Asia/Tokyo',weekday:'short'}).format(date);
+ return `<article class="weather-card"><h3>${['今日','聽日','後日','大後日'][i]}</h3><div class="weather-date"><time datetime="${day}">${dateLabel}</time>・${weekday}</div><span class="weather-symbol" aria-hidden="true">${icon}</span><div>${label}</div>${i===0?`<div class="weather-temp">${currentFresh?num(c.temperature_2m,'°C'):'—'}</div><div class="weather-note">${currentFresh?'當前溫度 · '+c.time.slice(11,16)+' JST':'當前溫度待更新'}</div>`:''}<dl><div><dt>最高／最低</dt><dd>${num(d.daily.temperature_2m_max[i],'°')}／${num(d.daily.temperature_2m_min[i],'°')}</dd></div><div><dt>降雨機率</dt><dd>${num(d.daily.precipitation_probability_max[i],'%')}</dd></div><div><dt>平均濕度</dt><dd>${num(d.daily.relative_humidity_2m_mean[i],'%')}</dd></div>${currentFresh?`<div><dt>當前濕度</dt><dd>${num(c.relative_humidity_2m,'%')}</dd></div>`:''}</dl></article>`;
+ }).join('');
+}
+function fallback(){
+ shell.dataset.state='error';
+ if(usable(saved)){render(saved);shell.dataset.state='stale';status.textContent='暫時更新唔到，以下係暫存預報，可能已過時。上次成功讀取：'+stamp(saved.at)+' JST。稍後會自動重試，亦可以撳「更新天氣」。';}
+ else{grid.innerHTML='<div class="weather-empty">☁️ 天氣手帳暫時連唔上線。請檢查網絡，再撳「更新天氣」，或到下方 Weather.com 查看。</div>';status.textContent='暫時未能取得最新天氣；30 分鐘後自動重試。';}
+}
+async function refresh(){
+ if(busy)return;busy=true;lastAttempt=Date.now();button.disabled=true;grid.setAttribute('aria-busy','true');localLabel();
+ if(!usable(saved)){saved=null;grid.innerHTML='<p class="weather-empty">☁️ 正在讀取最新天氣…</p>';}
+ status.textContent='正在更新名古屋天氣…';
+ const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),12000);
+ try{
+ const response=await fetch(endpoint,{signal:controller.signal,cache:'no-store'});
+ if(!response.ok)throw new Error('Weather HTTP '+response.status);
+ const data=await response.json();if(!valid(data)||data.daily.time[0]!==japanDay())throw new Error('Invalid weather response');
+ saved={at:Date.now(),data};render(saved);shell.dataset.state='ready';
+ status.textContent='已更新：'+stamp(saved.at)+' JST · 頁面開啟期間每 30 分鐘更新。';
+ try{localStorage.setItem(key,JSON.stringify(saved));}catch(_){}
+ }catch(_){fallback();}finally{clearTimeout(timeout);busy=false;button.disabled=false;grid.setAttribute('aria-busy','false');}
+}
+try{const cached=JSON.parse(localStorage.getItem(key));if(usable(cached)){saved=cached;render(saved);}}catch(_){}
+button.addEventListener('click',refresh);
+window.addEventListener('online',()=>{if(Date.now()-lastAttempt>5000)refresh();});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&(!usable(saved)||Date.now()-lastAttempt>=interval))refresh();});
+setInterval(()=>{localLabel();if(!document.hidden&&(!usable(saved)||Date.now()-lastAttempt>=interval))refresh();},60000);
+refresh();
+})();
+
 </script>
 </body></html>
